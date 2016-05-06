@@ -115,12 +115,19 @@
 ;; **
 ;;; ### How can we navigate around the graph?
 ;;; 
-;;; Are there any anomalies to investigate?
+;;; How do the extracted edges compare to the original code?
+;;; https://github.com/aysylu/loom/blob/master/src/loom/label.cljc#L81
 ;; **
 
 ;; @@
-(-> g (v (label-index g "loom.compliance-tester/graph-test")) in out props)
+(pprint (-> g (v (label-index g "loom.label/add-labeled-edges")) out (props :label)))
 ;; @@
+
+;; **
+;;; This commit seems like a weird decision given the testing focus in the prod library...can we see it in the network as such?
+;;; 
+;;; https://github.com/aysylu/loom/commit/42f7995a16eab9535273ff19dcd6db794c8975d2
+;; **
 
 ;; **
 ;;; ### What does the namespace network look like for this graph?
@@ -129,6 +136,10 @@
 ;; @@
 ;; todo
 ;; @@
+
+;; **
+;;; 
+;; **
 
 ;; **
 ;;; ### What other questions do you want to ask about this data?
